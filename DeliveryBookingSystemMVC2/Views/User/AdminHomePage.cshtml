@@ -1,0 +1,28 @@
+﻿@model DeliveryBookingSystemMVC2.Models.User
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ ViewData["Title"] = "AdminHomePage"; }
+<h1>Admin Verification</h1>
+<hr />
+<p>
+    <a asp-action="AdminHome">Back</a>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdminHomePage">
+            <div class="form-group">
+                <label asp-for="UserType" class="control-label"></label>
+                <br />
+                @Html.RadioButton("UserType", "Customer")<label>User</label>
+                <br />
+                @Html.RadioButton("UserType", "Executive")<label>Executive</label>
+                <span asp-validation-for="UserType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Verify" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

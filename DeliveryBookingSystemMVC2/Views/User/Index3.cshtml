@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DeliveryBookingSystemMVC2.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index3";
+}
+
+<h1>Booking index</h1>
+
+<p>
+    <a asp-action="CustomerHome">Back</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.customerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.executiveID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.executiveID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                <a asp-action="Edit3" asp-route-id="@item.orderID"><input type="submit" value="Edit" class="btn btn-success" /></a> |
+                <a asp-action="Details3" asp-route-id="@item.orderID"><input type="submit" value="Details" class="btn btn-primary" /></a> |
+                <a asp-action="Delete3" asp-route-id="@item.orderID"><input type="submit" value="Delete" class="btn btn-danger" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

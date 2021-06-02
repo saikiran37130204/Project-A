@@ -1,0 +1,80 @@
+﻿@model DeliveryBookingSystemMVC2.Models.Booking
+
+@{
+    ViewData["Title"] = "Create3";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="customerID" class="control-label"></label>
+                <input asp-for="customerID" class="form-control" readonly/>
+                <span asp-validation-for="customerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="executiveID" class="control-label"></label>
+                <input asp-for="executiveID" class="form-control" />
+                <a asp-action="ExecutiveList">Choose an executive near by you</a>
+                <span asp-validation-for="executiveID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date" class="control-label"></label>
+                <input asp-for="date" class="form-control" />
+                <span asp-validation-for="date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="weight" class="control-label"></label>
+                <input asp-for="weight" class="form-control" />in kg's only
+                <span asp-validation-for="weight" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>*@
+        <div class="form-group">
+            <label asp-for="address" class="control-label"></label>
+            @*<input asp-for="address" class="form-control" />*@
+            <textarea class="form-control" rows="3" asp-for="address"></textarea>
+            <span asp-validation-for="address" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pincode" class="control-label"></label>
+                <input asp-for="pincode" class="form-control" />
+                <span asp-validation-for="pincode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index3">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

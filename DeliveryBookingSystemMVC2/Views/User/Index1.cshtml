@@ -1,0 +1,95 @@
+﻿@model IEnumerable<DeliveryBookingSystemMVC2.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index1";
+}
+
+<h1>User Index</h1>
+
+<p>
+    <a asp-action="AdminHomePage">Back</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.customerID)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isVerified)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+
+            @*<td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pincode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isVerified)
+            </td>
+            <td>
+                  <a asp-action="Edit1" asp-route-id="@item.customerID"><input type="submit" value="Edit" class="btn btn-success" /></a> 
+                
+                 <!--<a asp-action="Details1" asp-route-id="@item.customerID"><input type="submit" value="Details" class="btn btn-primary" /></a>-->
+                
+                 @*<a type="submit" asp-action="Delete1" asp-route-id="@item.customerID">Delete</a>*@
+            <!--<a asp-action="Delete1" asp-route-id="@item.customerID"> <input type="submit"  value="Delete" class="btn btn-danger" /> </a>-->
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
